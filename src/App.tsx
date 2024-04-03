@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface MyForm {
+  name: string;
+  age: number;
 }
 
-export default App;
+const App: React.FC = () => {
+  const { register, handleSubmit } = useForm<MyForm>({
+    defaultValues: {},
+  });
+
+  const submit: SubmitHandler<MyForm> = (data) => {
+    console.log(data);
+  };
+
+  const error: SubmitErrorHandler<MyForm> = (data) => {
+    console.log(data);
+  }
+
+  return (
+    <div style={{
+      width: '100vw',
+      height: '100vh',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}>
+      <form onSubmit={handleSubmit(submit, error)}>
+        <input type="text" {...register('name', { required: true})}/>
+        <input type="number" {...register('age')}/>
+        <button>Отправить</button>
+      </form>
+    </div>
+  );
+};
+
+export { App };

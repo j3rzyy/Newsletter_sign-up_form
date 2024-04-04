@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 import { CustomForm } from "./components/CustomForm";
-import imgDesktop from './assets/illustration-sign-up-desktop.svg'
+import logoDesktop from "./assets/illustration-sign-up-desktop.svg";
+import logoMobile from "./assets/illustration-sign-up-mobile.svg";
 
 const App: React.FC = () => {
   return (
@@ -12,9 +13,9 @@ const App: React.FC = () => {
         </div>
         <div className="right-side">
           <picture>
-            <source srcSet="" />
+            <source srcSet={logoMobile} media="(max-width: 575px)"/>
+            <img src={logoDesktop} alt="logo" />
           </picture>
-          <img src="./assets/illustration-sign-up-desktop.svg" />
         </div>
       </div>
     </div>

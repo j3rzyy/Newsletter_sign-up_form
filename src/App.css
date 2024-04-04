@@ -9,10 +9,26 @@
 }
 
 .container {
-  border: solid 2px green;
-  width: 1200px;
-  height: 800px;
+  background-color: white;
+  border-radius: 35px;
+  width: 900px;
+  /* height: 600px; */
+
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  box-sizing: border-box;
 }
 
 .left-side {
+  display: flex;
+  flex-direction: column;
+  /* border: solid 1px #36384d; */
+  /* box-sizing: content-box; */
+
+  padding: 20px;
+}
+
+.form {
+  /* margin: 10px; */
 }

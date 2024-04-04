@@ -21,10 +21,10 @@ export const CustomForm: React.FC = () => {
 
   return (
     <div className="wrap">
-      <form onSubmit={handleSubmit(submit, error)}>
-        <label>Email address</label>
-        <input {...register("email", { required: true })} />
-        <button>Subscribe on monthly newsletter</button>
+      <form onSubmit={handleSubmit(submit, error)} className="form">
+        <label className="inputHead">Email address</label>
+        <input {...register("email", { required: true })} value={'   email@company.com'} className="input"/>
+        <button className="subButton">Subscribe on monthly newsletter</button>
       </form>
     </div>
   );

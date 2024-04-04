@@ -1,7 +1,37 @@
-/* .wrap {
-  width: 100vw;
-  height: 100vh;
+.wrap {
+  /* border: solid 1px darkmagenta; */
+  width: 400px;
+}
+
+.form {
   display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputHead {
+  color: #23203e;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.input,
+.subButton {
+  border-radius: 10px;
+  height: 50px;
+}
+
+.input {
+  color: #b7b5ba;
+  border: solid 1px #b7b5ba;
+  box-sizing: border-box;
+}
+
+.subButton {
+  background-color: #252242;
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 10px;
+}

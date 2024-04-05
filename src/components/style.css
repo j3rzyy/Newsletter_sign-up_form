@@ -1,6 +1,6 @@
 .wrap {
   /* border: solid 1px darkmagenta; */
-  width: 400px;
+  /* width: 400px; */
 }
 
 .form {
@@ -11,20 +11,22 @@
 
 .inputHead {
   color: #23203e;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
 }
 
 .input,
 .subButton {
   border-radius: 10px;
-  height: 50px;
+  height: 55px;
+  font-size: 15px;
 }
 
 .input {
   color: #b7b5ba;
   border: solid 1px #b7b5ba;
   box-sizing: border-box;
+  padding: 25px;
 }
 
 .subButton {
@@ -32,6 +34,5 @@
   color: white;
   border: none;
   font-weight: bold;
-  font-size: 15px;
-  margin-top: 10px;
+  margin-top: 15px;
 }

@@ -8,25 +8,24 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-
         <div className="left-side">
+          <div className="left-wrap">
+            <h1 className="textHeader">Stay updated!</h1>
 
-          <h1 className="textHeader">Stay updated!</h1>
+            <div className="text">
+              Join 60,000+ product managers receiving monthly updates on:
+            </div>
 
-          <div className="text">
-            Join 60,000+ product managers receiving monthly updates on:
+              <ul>
+                <li>Product discovery and build what matters</li>
+                <li>Measuring to ensure updates are a success</li>
+                <li>And much more!</li>
+              </ul>
+
+            <div className="form">
+              <CustomForm />
+            </div>
           </div>
-          
-          <ul className="list">
-            <li>Product discovery and build what matters</li>
-            <li>Measuring to ensure updates are a success</li>
-            <li>And much more!</li>
-          </ul>
-
-          {/* <div className="form"> */}
-            <CustomForm />
-          {/* </div> */}
-
         </div>
 
         <div className="right-side">

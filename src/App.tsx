@@ -4,6 +4,7 @@ import { CustomForm } from "./components/CustomForm";
 import logoDesktop from "./assets/illustration-sign-up-desktop.svg";
 import logoMobile from "./assets/illustration-sign-up-mobile.svg";
 import marker from "./assets/icon-list.svg";
+import { Link, Route, Routes } from "react-router-dom";
 
 function App() {
   return (

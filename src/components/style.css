@@ -1,10 +1,5 @@
-.wrap {
-  /* border: solid 1px darkmagenta; */
-  /* width: 400px; */
-}
-
 .form {
-  display: flex;
+  display: grid;
   flex-direction: column;
   gap: 10px;
 }
@@ -13,26 +8,42 @@
   color: #23203e;
   font-size: 12px;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.error {
+  color: #ff464a;
 }
 
 .input,
-.subButton {
+button {
   border-radius: 10px;
   height: 55px;
   font-size: 15px;
 }
 
 .input {
-  color: #b7b5ba;
   border: solid 1px #b7b5ba;
   box-sizing: border-box;
   padding: 25px;
 }
 
-.subButton {
-  background-color: #252242;
+.input:focus {
+  outline: solid 1px #23203e;
+}
+
+button {
   color: white;
   border: none;
   font-weight: bold;
   margin-top: 15px;
+}
+
+.subButton {
+  background-color: #252242;
+}
+
+.subActiveButton {
+  background: linear-gradient(0.25turn, #ff5478, #ff693e);
 }

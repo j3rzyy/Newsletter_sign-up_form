@@ -23,9 +23,9 @@ function App() {
             <li>And much more!</li>
           </ul>
 
-          <div className="form">
+          {/* <div className="form"> */}
             <CustomForm />
-          </div>
+          {/* </div> */}
 
         </div>
 

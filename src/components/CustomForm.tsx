@@ -9,7 +9,7 @@ interface MyForm {
 export const CustomForm: React.FC = () => {
   const {
     register,
-    formState: { errors },
+    formState: { errors, isValid },
     handleSubmit,
     reset,
   } = useForm<MyForm>({
@@ -27,23 +27,34 @@ export const CustomForm: React.FC = () => {
   };
 
   return (
-    <div className="wrap">
-      <form onSubmit={handleSubmit(submit, error)} className="form">
-        <label className="inputHead">Email address</label>
-        <input
-          {...register("email", {
-            required: "Valid email required",
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: "invalid email address",
-            },
-          })}
-          // value="email@company.com"
-          className="input"
-        />
-        <div>{errors?.email && <p>{errors.email.message || "Error!"}</p>}</div>
-        <button className="subButton">Subscribe on monthly newsletter</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit(submit, error)} className="form">
+      <label className="inputHead">
+        <span>Email address</span>
+
+        <span className="error">
+          {errors?.email && <>{errors.email.message || "Error!"}</>}
+        </span>
+      </label>
+      <input
+        placeholder="email@company.com"
+        {...register("email", {
+          required: "Valid email required",
+          pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            message: "Valid email required",
+          },
+        })}
+        className="input"
+      />
+      {!isValid ? (
+        <button className="subButton">
+          Subscribe on monthly newsletter
+        </button>
+      ) : (
+        <button className="subActiveButton">
+          Subscribe on monthly newsletter
+        </button>
+      )}
+    </form>
   );
 };

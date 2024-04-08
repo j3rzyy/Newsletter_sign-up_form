@@ -5,7 +5,7 @@
 }
 
 .inputHead {
-  color: #23203e;
+  color: #36384d;
   font-size: 12px;
   font-weight: bold;
   display: flex;
@@ -18,9 +18,9 @@
 
 .input,
 button {
-  border-radius: 10px;
+  border-radius: 8px;
   height: 55px;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .input {

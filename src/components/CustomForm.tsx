@@ -47,12 +47,10 @@ export const CustomForm: React.FC = () => {
         className="input"
       />
       {!isValid ? (
-        <button className="subButton">
-          Subscribe on monthly newsletter
-        </button>
+        <button className="subButton">Subscribe to monthly newsletter</button>
       ) : (
         <button className="subActiveButton">
-          Subscribe on monthly newsletter
+          Subscribe to monthly newsletter
         </button>
       )}
     </form>

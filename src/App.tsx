@@ -3,6 +3,7 @@ import "./App.css";
 import { CustomForm } from "./components/CustomForm";
 import logoDesktop from "./assets/illustration-sign-up-desktop.svg";
 import logoMobile from "./assets/illustration-sign-up-mobile.svg";
+import marker from "./assets/icon-list.svg";
 
 function App() {
   return (
@@ -16,11 +17,20 @@ function App() {
               Join 60,000+ product managers receiving monthly updates on:
             </div>
 
-              <ul>
-                <li>Product discovery and build what matters</li>
-                <li>Measuring to ensure updates are a success</li>
-                <li>And much more!</li>
-              </ul>
+            <ul>
+              <li>
+                <img src={marker} alt="-" />
+                <span>Product discovery and building what matters</span>
+              </li>
+              <li>
+                <img src={marker} alt="-" />
+                <span>Measuring to ensure updates are a success</span>
+              </li>
+              <li>
+                <img src={marker} alt="-" />
+                <span>And much more!</span>
+              </li>
+            </ul>
 
             <div className="form">
               <CustomForm />
@@ -30,7 +40,7 @@ function App() {
 
         <div className="right-side">
           <picture>
-            <source srcSet={logoMobile} media="(max-width: 575px)" />
+            <source srcSet={logoMobile} media="(max-width: 1000px)" />
             <img src={logoDesktop} alt="logo" />
           </picture>
         </div>

@@ -17,7 +17,8 @@
 }
 
 .input,
-button {
+.subButton,
+.subActiveButton {
   border-radius: 8px;
   height: 55px;
   font-size: 16px;
@@ -33,17 +34,17 @@ button {
   outline: solid 1px #23203e;
 }
 
-button {
+.subButton,
+.subActiveButton {
+  cursor: pointer;
   color: white;
   border: none;
   font-weight: bold;
   margin-top: 15px;
-}
-
-.subButton {
   background-color: #252242;
 }
 
 .subActiveButton {
   background: linear-gradient(0.25turn, #ff5478, #ff693e);
+  box-shadow: -10px -5px 25px -10px #ff5478, 10px 5px 25px -10px #ff693e
 }

@@ -40,7 +40,7 @@ export const MyForm = () => {
 
         <div className="right-side">
           <picture>
-            <source srcSet={logoMobile} media="(max-width: 1000px)" />
+            <source srcSet={logoMobile} media="(max-width: 930px)" />
             <img src={logoDesktop} alt="logo" />
           </picture>
         </div>

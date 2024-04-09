@@ -17,6 +17,8 @@ export const CustomForm: React.FC = () => {
     mode: "onBlur",
   });
 
+  const navigate = useNavigate()
+
   const submit: SubmitHandler<MyForm> = (data) => {
     // console.log(data);
     // alert(JSON.stringify(data));
@@ -27,8 +29,6 @@ export const CustomForm: React.FC = () => {
   const error: SubmitErrorHandler<MyForm> = (data) => {
     console.log(data);
   };
-
-  const navigate = useNavigate()
 
   return (
     <form onSubmit={handleSubmit(submit, error)} className="form">

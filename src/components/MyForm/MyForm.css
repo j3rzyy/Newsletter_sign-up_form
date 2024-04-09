@@ -65,7 +65,7 @@ ul > li > span {
   margin-top: 5px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 930px) {
   .main {
     background-color: white;
     align-items: flex-start;

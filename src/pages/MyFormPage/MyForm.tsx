@@ -1,9 +1,9 @@
 import React from "react";
 import "./MyForm.css";
-import { CustomForm } from "../CustomForm/CustomForm";
-import logoDesktop from "../../assets/illustration-sign-up-desktop.svg";
-import logoMobile from "../../assets/illustration-sign-up-mobile.svg";
-import marker from "../../assets/icon-list.svg";
+import { CustomForm } from "../../components/CustomForm/CustomForm";
+import logoDesktop from "../../assets/images/illustration-sign-up-desktop.svg";
+import logoMobile from "../../assets/images/illustration-sign-up-mobile.svg";
+import marker from "../../assets/images/icon-list.svg";
 
 export const MyForm = () => {
   return (

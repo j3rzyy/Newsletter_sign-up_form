@@ -1,7 +1,7 @@
 import React from "react";
-import "./style.css";
+import "./CustomForm.css";
 import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface MyForm {
   email: string;
@@ -17,13 +17,13 @@ export const CustomForm: React.FC = () => {
     mode: "onBlur",
   });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const submit: SubmitHandler<MyForm> = (data) => {
     // console.log(data);
     // alert(JSON.stringify(data));
     // reset();
-    navigate('/success')
+    navigate("/success");
   };
 
   const error: SubmitErrorHandler<MyForm> = (data) => {

@@ -8,22 +8,20 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { SuccessBlock } from "./components/SuccessBlock/SuccessBlock";
-import { MyForm } from "./components/MyForm/MyForm";
+import { SuccessBlock } from "./pages/SuccessPage/SuccessBlock";
+import { MyForm } from "./pages/MyFormPage/MyForm";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route  path="/" element={<MyForm />} />
+      <Route path="/" element={<MyForm />} />
       <Route path="/success" element={<SuccessBlock />} />
     </Route>
   )
 );
 
 function App() {
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 }
 
 export { App };

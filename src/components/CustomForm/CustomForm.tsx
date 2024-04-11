@@ -8,21 +8,30 @@ interface MyForm {
   email: string;
 }
 
-// interface NavigateProps {
-//   to: To;
-//   replace?: boolean;
-//   state?: State;
-// }
+// const asyncPostCall = async (data: MyForm) => {
+//   try {
+//     await fetch("https://jsonplaceholder.typicode.com/users", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json; charset=UTF-8",
+//       },
+//       body: JSON.stringify(data),
+//     });
+//     const response = await response.json();
+//     // enter you logic when the fetch is successful
+//     console.log(data);
+//   } catch (error) {
+//     // enter your logic for when there is an error (ex. error toast)
 
-declare function Navigate(props: MyForm): null;
+//     console.log(error);
+//   }
+// };
 
 export const CustomForm: React.FC = () => {
   const {
     register,
     formState: { errors, isValid },
     handleSubmit,
-    reset,
-    getValues,
   } = useForm<MyForm>({
     mode: "onBlur",
   });
@@ -38,7 +47,8 @@ export const CustomForm: React.FC = () => {
       },
     })
       .then((response) => response.json())
-      .then((json) => console.log(json));
+      .then((json) => console.log(json))
+      .catch((err) => alert('1'));
     navigate("/success", { state: data });
   };
 

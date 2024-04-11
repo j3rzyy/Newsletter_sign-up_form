@@ -1,9 +1,10 @@
 import style from "./SuccessBlock.module.css";
 import iconSuccess from "../../assets/images/icon-success.svg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const SuccessBlock = () => {
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   return (
     <div className={style.container}>
@@ -13,7 +14,7 @@ export const SuccessBlock = () => {
           <h1>Thanks for subscribing!</h1>
           <p>
             A confirmation email has been sent to{" "}
-            <span className={style.email}>ash@loremcompany.com</span>. Please
+            <span className={style.email}>{state.email}</span>. Please
             open it and click the button inside to confirm
           </p>
           <button className={style.dismissBtn} onClick={() => navigate("/")}>

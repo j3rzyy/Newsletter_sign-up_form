@@ -1,31 +1,10 @@
-import React, { useState } from "react";
 import "./CustomForm.css";
-import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
-import { To, useNavigate } from "react-router-dom";
-import { State } from "react-alice-carousel";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 interface MyForm {
   email: string;
 }
-
-// const asyncPostCall = async (data: MyForm) => {
-//   try {
-//     await fetch("https://jsonplaceholder.typicode.com/users", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json; charset=UTF-8",
-//       },
-//       body: JSON.stringify(data),
-//     });
-//     const response = await response.json();
-//     // enter you logic when the fetch is successful
-//     console.log(data);
-//   } catch (error) {
-//     // enter your logic for when there is an error (ex. error toast)
-
-//     console.log(error);
-//   }
-// };
 
 export const CustomForm: React.FC = () => {
   const {
@@ -38,18 +17,36 @@ export const CustomForm: React.FC = () => {
 
   const navigate = useNavigate();
 
+  const asyncPostCall = async (data: MyForm) => {
+    try {
+      await fetch("https://jsonplaceholder.typicode.com/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+        },
+        body: JSON.stringify(data),
+      });
+      navigate("/success", { state: data })
+  
+    } catch (error) {
+      navigate('/error')
+      console.log(error);
+    }
+  };
+
   const submit: SubmitHandler<MyForm> = (data) => {
-    fetch("https://jsonplaceholder.typicode.com/users", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => console.log(json))
-      .catch((err) => alert('1'));
-    navigate("/success", { state: data });
+    // fetch("https://jsonplaceholder.typicodeee.com/users", {
+    //   method: "POST",
+    //   body: JSON.stringify(data),
+    //   headers: {
+    //     "Content-type": "application/json; charset=UTF-8",
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((json) => console.log(json))
+    //   .then(() => navigate("/success", { state: data }))
+    //   .catch((err) => navigate('/error'));
+    asyncPostCall(data);
   };
 
   return (

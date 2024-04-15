@@ -1,10 +1,10 @@
-import { MyForm } from "../components/CustomForm/CustomForm";
+import { MyForm } from "../types/types";
 
 const baseURL = 'https://jsonplaceholder.typicode.com/users';
 
 const deleteUser = async (id: number) => {
   const data = await fetch(
-    `${baseURL}/${id - 1}`,
+    `${baseURL}/${id}`,
     {
       method: "DELETE",
     }

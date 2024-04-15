@@ -1,11 +1,8 @@
 import "./CustomForm.css";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { registrationService } from "../../service/request.service";
-
-export type MyForm = {
-  email: string;
-};
+import { registrationService } from "../../../service/request.service";
+import { MyForm } from "../../../types/types";
 
 export const CustomForm: React.FC = () => {
   const {

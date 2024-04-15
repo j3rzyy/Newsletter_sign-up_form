@@ -6,16 +6,16 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { SuccessBlock } from "./pages/SuccessPage/SuccessBlock";
-import { MyForm } from "./pages/MyFormPage/MyForm";
-import { ErrorBlock } from "./pages/ErrorPage/ErrorBlock";
+import MainPage from "./pages/MainPage";
+import SuccessPage from "./pages/SuccessPage";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="/" element={<MyForm />} />
-      <Route path="/success" element={<SuccessBlock />} />
-      <Route path="/error" element={<ErrorBlock />} />
+      <Route path="/" element={<MainPage />} />
+      <Route path="/success" element={<SuccessPage />} />
+      <Route path="/error" element={<ErrorPage />} />
     </Route>
   )
 );

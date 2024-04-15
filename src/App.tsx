@@ -2,9 +2,7 @@ import React from "react";
 import "./App.css";
 import {
   Route,
-  Router,
   RouterProvider,
-  Routes,
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";

@@ -1,10 +1,11 @@
 import "./CustomForm.css";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { registrationService } from "../../service/request.service";
 
-interface MyForm {
+export type MyForm = {
   email: string;
-}
+};
 
 export const CustomForm: React.FC = () => {
   const {
@@ -19,19 +20,11 @@ export const CustomForm: React.FC = () => {
 
   const asyncPostCall = async (data: MyForm) => {
     try {
-      const response = await fetch("https://jsonplaceholder.typicode.com/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json; charset=UTF-8",
-        },
-        body: JSON.stringify(data),
-      });
-      const res = await response.json()
-      navigate("/success", { state: res })
-  
+      const response = await registrationService.saveUser(data);
+      const res = await response.json();
+      navigate("/success", { state: res });
     } catch (error) {
-      navigate('/error')
-      console.log(error);
+      navigate("/error");
     }
   };
 
@@ -69,9 +62,7 @@ export const CustomForm: React.FC = () => {
           },
           validate: {
             emailValidate: async (fieldValue) => {
-              const response = await fetch(
-                `https://jsonplaceholder.typicode.com/users?email=${fieldValue}`
-              );
+              const response = await registrationService.getUsers(fieldValue);
               const data = await response.json();
               return data.length === 0 || "Email already exists";
             },

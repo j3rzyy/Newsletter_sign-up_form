@@ -6,6 +6,20 @@ export const SuccessBlock = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
 
+  // console.log(state)
+
+  const handleSubmit = async () => {
+    try {
+      await fetch(`https://jsonplaceholder.typicode.com/users/${state.id-1}`, {
+        method: "DELETE"
+      });
+      navigate("/")
+    } catch (error) {
+      navigate('/error')
+      console.log(error);
+    }
+  }
+
   return (
     <div className={style.container}>
       <div className={style.block}>
@@ -17,7 +31,7 @@ export const SuccessBlock = () => {
             <span className={style.email}>{state.email}</span>. Please
             open it and click the button inside to confirm
           </p>
-          <button className={style.dismissBtn} onClick={() => navigate("/")}>
+          <button className={style.dismissBtn} onClick={() => handleSubmit()}>
             Dismiss message
           </button>
         </div>

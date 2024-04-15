@@ -19,14 +19,15 @@ export const CustomForm: React.FC = () => {
 
   const asyncPostCall = async (data: MyForm) => {
     try {
-      await fetch("https://jsonplaceholder.typicode.com/users", {
+      const response = await fetch("https://jsonplaceholder.typicode.com/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json; charset=UTF-8",
         },
         body: JSON.stringify(data),
       });
-      navigate("/success", { state: data })
+      const res = await response.json()
+      navigate("/success", { state: res })
   
     } catch (error) {
       navigate('/error')

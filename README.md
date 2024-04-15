@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+# SPA sign-up form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Take a look at [Demo](https://newsletter-sign-up-form-ivory.vercel.app/)
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+
+Inside it uses [SW{JSON} PlaceholderAPI](https://jsonplaceholder.typicode.com/)
+
+Deploy using [vercel](https://vercel.com/)
+
+## Using features
+
+The project includes:
+
+    - Mobile-first workflow
+    - react-hook-form
+    - react-router-dom
+    - RESTful web API
+    - Flexbox
+    - CSS Grid
 
 ## Available Scripts
 

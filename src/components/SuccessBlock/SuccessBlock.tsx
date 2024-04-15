@@ -39,7 +39,7 @@ export const SuccessBlock = () => {
             <span className={style.email}>{state.email}</span>. Please open it
             and click the button inside to confirm
           </p>
-          <button className={style.dismissBtn} onClick={() => handleSubmit()}>
+          <button className={style.dismissBtn} onClick={handleSubmit}>
             Dismiss message
           </button>
         </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import "./MyForm.css";
 import { CustomForm } from "./CustomForm/CustomForm";
 import logoDesktop from "../../assets/images/illustration-sign-up-desktop.svg";
